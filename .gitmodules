@@ -1,0 +1,24 @@
+[submodule "tmux-colors-solarized"]
+	path = tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "tmux-powerline"]
+	path = tmux-powerline
+	url = https://github.com/neggert/tmux-powerline.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/neggert/oh-my-zsh.git
+[submodule "zsh/dircolors-solzarized"]
+	path = zsh/dircolors-solzarized
+	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = git@github.com:neggert/oh-my-zsh.git
+[submodule "zsh/.dircolors-solarized"]
+	path = zsh/.dircolors-solarized
+	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "zsh/.oh-my-zsh"]
+	path = zsh/.oh-my-zsh
+	url = git@github.com:neggert/oh-my-zsh.git

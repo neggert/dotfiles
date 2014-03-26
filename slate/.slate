@@ -1,0 +1,72 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Resize Bindings
+# bind right:alt       resize +10% +0
+# bind left:alt        resize -10% +0
+# bind up:alt          resize +0   -10%
+# bind down:alt        resize +0   +10%
+# bind right:ctrl;alt  resize -10% +0 bottom-right
+# bind left:ctrl;alt   resize +10% +0 bottom-right
+# bind up:ctrl;alt     resize +0   +10% bottom-right
+# bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Push Bindings
+bind right:alt		push right bar-resize:screenSizeX/2
+bind left:alt		push left bar-resize:screenSizeX/2
+bind up:alt		push up bar-resize:screenSizeY/2
+bind down:alt		push down bar-resize:screenSizeY/2
+bind left:alt		push left bar-resize:screenSizeX/2
+bind right:ctrl;alt  corner top-right resize:screenSizeX/3;3*screenSizeY/4
+bind left:ctrl;alt   corner top-left resize:screenSizeX/3;3*screenSizeY/4
+bind up:ctrl;alt   move screenOriginX+screenSizeX/3,screenOriginY screenSizeX/3,screenSizeY/2
+bind down:ctrl;alt   move screenOriginX+screenSizeX/3,screenOriginY+screenSizeY/2 screenSizeX/3,screenSizeY/2
+bind left:ctrl;alt;cmd   corner top-left resize:2*screenSizeX/3;3*screenSizeY/4
+bind right:ctrl;alt;cmd  corner top-right resize:2*screenSizeX/3;3*screenSizeY/4
+
+
+
+# Nudge Bindings
+bind right:shift;alt nudge +10% +0
+bind left:shift;alt  nudge -10% +0
+bind up:shift;alt    nudge +0   -10%
+bind down:shift;alt  nudge +0   +10%
+
+# Throw Bindings
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind 3:ctrl;alt         throw 2 resize
+bind right:alt;cmd throw right resize
+bind left:alt;cmd  throw left  resize
+bind up:alt;cmd    throw up    resize
+bind down:alt;cmd  throw down  resize
+
+# Focus Bindings
+bind right:cmd    focus right
+bind left:cmd     focus left
+bind up:cmd       focus up
+bind down:cmd     focus down
+bind up:cmd;alt   focus behind
+bind down:cmd;alt focus behind
+
+# Window Hints
+bind esc:cmd hint
+
+layout work BEFORE shell wait path:~/.dotfiles/nostow/slatescripts '/usr/bin/osascript iTerm_fullscreen_off.scpt'
+layout work 'iTerm' corner top-right resize:screenSizeX/3;3*screenSizeY/4 1
+layout work 'Google Chrome' throw 0 resize
+layout work 'Sublime Text' move screenOriginX+screenSizeX/3;screenOriginY screenSizeX/3;3*screenSizeY/4 1
+
+# layout mobile BEFORE shell wait path:~/.dotfiles/nostow/slatescripts '/usr/bin/osascript iTerm_fullscreen_on.scpt'
+layout mobile 'Google Chrome' focus 'Google Chrome'
+
+default work count:2
+default mobile count:1
+
+bind t:ctrl,cmd layout work
+bind m:ctrl,cmd layout mobile
+
