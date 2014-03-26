@@ -67,14 +67,11 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK
 
 export PATH=$HOME/bin:$PATH
 
-eval `gdircolors ~/.dotfiles/dircolors-solarized/dircolors.256dark`
+eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
 alias ls='gls --color=auto'
 
 # added by Anaconda 1.7.0 installer
-export PATH="/Users/nic/anaconda/bin:$PATH"
-export LD_LIBRARY_PATH=/home/nic/anaconda/lib:$LD_LIBRARY_PATH
-
-export HADOOP_HOME=/Users/nic/bin/hadoop-2.0.0-cdh4.5.0
-export PATH=$PATH:$HADOOP_HOME/bin
+export PATH="$HOME/anaconda/bin:$PATH"
+export LD_LIBRARY_PATH=$HOME/anaconda/lib:$LD_LIBRARY_PATH
 
 alias xpraattach="/Applications/Window-Switch.app/Contents/Helpers/xpra attach ssh:workstation:62 &"
