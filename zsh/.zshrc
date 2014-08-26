@@ -8,7 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="garyblessington"
 # ZSH_THEME="lambda"
 # ZSH_THEME="minimal"
-ZSH_THEME="neggert"
+ZSH_THEME="agnoster"
 
 export DEFAULT_USER=nic
 
@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew extract compleat osx pip svn cloudapp github lein)
+plugins=(git extract compleat pip svn github )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,17 +61,19 @@ export EDITOR='subl -w'
 
 alias ipnb='ipython notebook --pylab inline'
 
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+export PATH=$HOME/bin:/usr/X11R6/bin/:$PATH
 
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-export PATH=$HOME/bin:$PATH
-
-eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
-alias ls='gls --color=auto'
+eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
+alias ls='ls --color=auto'
 
 # added by Anaconda 1.7.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
-export LD_LIBRARY_PATH=$HOME/anaconda/lib:$LD_LIBRARY_PATH
 
-alias xpraattach="/Applications/Window-Switch.app/Contents/Helpers/xpra attach ssh:workstation:62 &"
+setxkbmap -layout us -option ctrl:nocaps
+
+# for Oracle access
+export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
+export SQLPATH=/usr/lib/oracle/12.1/client64/lib
+export TNS_ADMIN=/home/nic/.oracle
+export ORACLE_SID=OKPEDW1
+export ORACLE_HOME=/usr/lib/oracle/12.1/client64/
